@@ -9,7 +9,10 @@ var search = document.querySelector('.input');
 var current = document.querySelector('.ulCr');
 var future = document.querySelector('.ulFt');
 
-var hs = [];
+if (!localStorage.getItem("saveSearch")){
+  var hs = [];
+}
+
 
 
 // console.log(date)
@@ -245,7 +248,9 @@ function saveSrch() {
     hold.append(click)
     document.querySelector('.local').append(hold)
   }
+  return it;
 }
+hs = saveSrch()
 
 // function to delete all li from ul
 function deleteChild(target) {
