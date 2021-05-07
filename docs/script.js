@@ -233,12 +233,15 @@ function getData(input) {
 // populate previous searches
 function saveSrch() {
   var val = localStorage.getItem("saveSearch")
-  for (var i = 0; i < hs.length; i++) {
+  // console.log(val)
+  var it = val.split(',')
+  // console.log(it)
+  for (var i = 0; i < it.length; i++) {
     var hold = document.createElement('li');
     var click = document.createElement('button');
     click.setAttribute("class", "dropdown-item")
     click.setAttribute("type", "button")
-    click.textContent = hs[i]
+    click.textContent = it[i]
     hold.append(click)
     document.querySelector('.local').append(hold)
   }
@@ -259,6 +262,7 @@ document.querySelector('.form1').addEventListener('submit', function (e) {
   hs.push(search.value)
   // getFutureData(search.value)
   getData(search.value)
+  // localStorage.setItem("saveSearch", JSON.stringify(hs))
   localStorage.setItem("saveSearch", hs)
   deleteChild(document.querySelector('.local'))
   saveSrch()
