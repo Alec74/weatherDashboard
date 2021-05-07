@@ -1,4 +1,24 @@
-* {
-    font-family: 'Roboto Slab', serif;
+.favorable{
+    background-color: rgb(72, 255, 0);
+}
+.moderate{
+    background-color: rgb(238, 255, 0);
+}
+.severe{
+    background-color: rgb(255, 0, 0);
+}
+/* .clear{
+    z-index: 1;
+    position: fixed;
+} */
+.fix{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    margin-top: -100px
+}
+
+main{
+    margin-top: 100px;
 }
 
