@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Linkages -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    <title>Weathy by City</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <title>Weather Afar</title>
 </head>
-<body>
-    <!-- Welcome to page -->
-    <header class="flex-row text-center text-light bg-primary">
-        <h1>Dynamic Weather</h1>
-    </header>
 
-    <main class="d-flex">
-        <div class="card mx-auto mt-3" style="width: 36rem;">
-            <div class="card-header">
-                <label for="cityInput" class="form-label">Search For a City's Weather</label>
-                <div class="mb-3 input-group">
-                    <input type="location" class="form-control" id="cityInput" placeholder="New York">
-                    <button class="btn btn-outline-secondary" type="button" id="go">Go</button>
+<body>
+    <!-- Navbar for the page -->
+    <nav class="navbar navbar-light bg-dark fix">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">
+                <img src="data:image/jpeg;base64,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"
+                    alt="" width="30" height="24" class="d-inline-block align-text-top">
+                Dynamic Weather
+                <button type="button" class="btn btn-outline-warning clear mx-2">Clear Display</button>
+            </a>
+        </div>
+
+    </nav>
+    <!-- Start of container to hold search and data display -->
+    <main>
+        <div class="container">
+            <!-- First row handles first search and display -->
+            <div class="row searchIt">
+                <!-- This column handles searching a city -->
+                <div class="col-6 srch">
+                    <form action="submit" class="w-33 form1">
+                        <label for="formInput" class="form-label">Search for a City's Weather</label>
+                        <input type="text" class="form-control input" placeholder="City" aria-label="City">
+                        <button type="submit" class="btn btn-primary my-2">Go</button>
+                    </form>
+                    <div class="dropdown my-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Previous Searches
+                        </button>
+                        <ul class="dropdown-menu local" aria-labelledby="dropdownMenu2">
+                            <!-- <li><button class="dropdown-item" type="button">Example save</button></li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul>
+            <div class="container add reverse">
+
+            </div>
         </div>
     </main>
-
-    <!-- Script Linkages -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
