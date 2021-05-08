@@ -250,7 +250,7 @@ function saveSrch() {
   }
   return it;
 }
-hs = saveSrch()
+// hs = saveSrch()
 
 // function to delete all li from ul
 function deleteChild(target) {
