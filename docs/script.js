@@ -12,7 +12,10 @@ var future = document.querySelector('.ulFt');
 if (!localStorage.getItem("saveSearch")){
   var hs = [];
 }
-
+if (localStorage.getItem("saveSearch")){
+  var hs = [localStorage.getItem("saveSearch")]
+}
+// console.log(hs)
 
 
 // console.log(date)
@@ -102,7 +105,7 @@ function makeCard(city, id, temp, humid, wind, date, uv) {
   return col1;
 }
 
-function makeRow(day1, day2, day3, day4, day5) {
+function makeRow(day1, day2, day3, day4, day5, day6) {
   // make row div with row class
   var row = document.createElement('div');
   row.setAttribute("class", "row display second");
@@ -122,6 +125,9 @@ function makeRow(day1, day2, day3, day4, day5) {
   }
   if (day5 != undefined) {
     row.append(day5)
+  }
+  if (day6 != undefined) {
+    row.append(day6)
   }
   container.append(row)
 }
@@ -226,7 +232,18 @@ function getData(input) {
               var wind = data.list[28].wind.speed;
               var date = moment(data.list[28].dt_txt).format('dddd, MMMM Do YYYY');
               var e = makeCard(data.city.name, weatherIcon, temp, humid, wind, date);
-              makeRow(a, b, c, d, e)
+              // makeRow(a, b, c, d, e)
+              // sixth day
+              var weatherIcon = 'http://openweathermap.org/img/w/';
+              weatherIcon = weatherIcon + data.list[36].weather[0].icon + '.png';
+              var temp = data.list[36].main.temp
+              temp = temp.toString()
+              temp = temp.split('.')[0]
+              var humid = data.list[36].main.humidity;
+              var wind = data.list[36].wind.speed;
+              var date = moment(data.list[36].dt_txt).format('dddd, MMMM Do YYYY');
+              var f = makeCard(data.city.name, weatherIcon, temp, humid, wind, date);
+              makeRow(a, b, c, d, e, f)
             });
         })
     });
