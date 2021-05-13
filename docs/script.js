@@ -281,6 +281,7 @@ function deleteChild(target) {
 // Go btn event listener
 document.querySelector('.form1').addEventListener('submit', function (e) {
   e.preventDefault()
+  deleteChild(document.querySelector('.add'))
   hs.push(search.value)
   // getFutureData(search.value)
   getData(search.value)
