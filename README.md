@@ -12,7 +12,12 @@ After searching for a city then...
 * After saving the timeblock the text is added to local storage
 * If the page is refreshed then the saved events persist
 
+# Intro
 ![image of webpage](docs/images/demo.png)
+# Search Display
+![image of webpage](docs/images/demo2.png)
+# Previous Searches
+![image of webpage](docs/images/demo3.png)
 
 View Live Webpage!
 https://alec74.github.io/weatherDashboard/
