@@ -1,8 +1,8 @@
-# Unit 6 Homwork
+# Weather Dashboard
 
 This coding project was to start from scratch and create a weather dashboard using the openweather api [OpenWeather API](https://openweathermap.org/api)
 
-The objectives to complete this homework include the following:
+The objectives to complete this Project include the following:
 
 After searching for a city then...
 * Current and future weather conditions are displayed and added to search history
@@ -12,7 +12,7 @@ After searching for a city then...
 * After saving the timeblock the text is added to local storage
 * If the page is refreshed then the saved events persist
 
-![image of webpage](images/demo.png)
+![image of webpage](docs/images/demo.png)
 
 View Live Webpage!
 https://alec74.github.io/weatherDashboard/
