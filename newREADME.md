@@ -39,6 +39,6 @@
   ## License
   Notice: This application is licensed under MIT
   
-  [License-Link](../LICENSE)
+  [License-Link](./LICENSE)
     
   
